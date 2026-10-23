@@ -8,7 +8,7 @@
 <header class="top"><a class="logo" href="../">RIVALS <span>CLASH</span> / ADMIN</a><a href="../">← На сайт</a></header>
 <div id="login" class="panel" style="max-width:460px;margin:45px auto"><div class="eyebrow">ЗАКРЫТАЯ ЗОНА</div><h1>Вход администратора</h1><p class="muted">Панель управления турниром RIVALS CLASH.</p>
 <div class="notice">Авторизация пока не подключена: GitHub Pages не выполняет серверный код. Не вводи здесь настоящий пароль — форма не отправляет и не сохраняет его.</div>
-<label class="field"><span>Логин</span><input disabled placeholder="Настроим после подключения backend"></label><label class="field"><span>Пароль</span><input disabled type="password" placeholder="Авторизация ещё не настроена"></label><button class="btn" disabled>Войти</button><div class="status">Статус: интерфейс создан · серверная авторизация не настроена</div></div>
+<label class="field"><span>Логин</span><input disabled placeholder="Настроим после подключения backend"></label><label class="field"><span>Пароль</span><input disabled type="password" placeholder="Авторизация ещё не настроена"></label><button class="btn" type="button" id="previewBtn">Открыть демо-панель</button><div class="status">Демо-режим: можно посмотреть разделы, но изменения не сохраняются. Защищённый вход подключим после настройки сервера.</div></div>
 <main id="dashboard" hidden><div class="eyebrow">CONTROL CENTER</div><h1>Админ-панель</h1><p class="muted">Управление турнирами, участниками и контентом сообщества.</p>
 <div class="notice"><b>Требуется настройка сервера.</b> Эта панель пока демонстрационная. Данные не сохраняются и кнопки управления не меняют публичный сайт, пока не будет подключён API с авторизацией.</div>
 <div class="layout"><aside class="panel side">
@@ -25,5 +25,5 @@
 </div></div></main>
 <footer>RIVALS CLASH · Admin UI · Не вводи пароли, пока серверная авторизация не настроена.</footer></div>
 <script>
-document.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b===button));document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===button.dataset.tab))}));
+document.querySelectorAll('[data-tab]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b===button));document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===button.dataset.tab))}));\ndocument.getElementById('previewBtn')?.addEventListener('click',()=>{document.getElementById('login').hidden=true;document.getElementById('dashboard').hidden=false;});
 </script></body></html>
